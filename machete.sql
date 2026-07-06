@@ -73,3 +73,9 @@ LIMIT 5;
 --  ELIMINAR TODO DE UNA TABLA (Con cuidado)
 -- Borra todo, pero mantiene la estructura (más rápido que DELETE)
 TRUNCATE TABLE nombre_tabla;
+
+
+
+https://github.com/jcomte23/SQL
+
+https://github.com/levets01/mySQL/tree/main
