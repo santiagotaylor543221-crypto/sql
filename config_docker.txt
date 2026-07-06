@@ -1,0 +1,23 @@
+mkdir mi_parcial
+cd mi_parcial
+nano docker-compose.yml
+docker compose up -d
+
+
+
+  
+  version: '3.8'
+services:
+  db:
+    image: mysql:8.0
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpassword
+      MYSQL_DATABASE: dato_san
+    ports:
+      - "3306:3306"
+    volumes:
+      - ./data:/var/lib/mysql
+
+
+        sudo snap install dbeaver-ce
