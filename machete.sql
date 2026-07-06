@@ -74,7 +74,24 @@ LIMIT 5;
 -- Borra todo, pero mantiene la estructura (más rápido que DELETE)
 TRUNCATE TABLE nombre_tabla;
 
+-- COMANDOS DE RESPALDO (BACKUP) Y RESTAURACIÓN
 
+-- EXPORTAR (Sacar el respaldo)
+-- docker exec -t <nombre_contenedor> mysqldump -u root -prootpassword dato_san > respaldo.sql
+MySql
+docker exec -t mi_contenedor_mysql mysqldump -u usuario -p'contraseña' nombre_base_datos > respaldo.sql
+
+
+Postgres
+docker exec -t mi_contenedor_postgres pg_dump -U usuario nombre_base_datos > respaldo.sql
+
+-- IMPORTAR (Cargar el respaldo)
+-- docker exec -i <nombre_contenedor> mysql -u root -prootpassword dato_san < respaldo.sql
+  MySql
+docker exec -i mi_contenedor_mysql mysql -u usuario -p'contraseña' nombre_base_datos < respaldo.sql
+
+Postgres
+docker exec -i mi_contenedor_postgres psql -U usuario -d nombre_base_datos < respaldo.sql
 
 https://github.com/jcomte23/SQL
 
